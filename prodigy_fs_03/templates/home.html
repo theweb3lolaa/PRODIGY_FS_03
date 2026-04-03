@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Estore{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-container">
+        <!-- Hero Image -->
+        <div class="hero-image fade-right">
+            <img src="{{ url_for('static', filename='webimages/images04.png') }}" alt="Hero Banner">
+        </div>
+        <!-- Hero Text -->
+
+        <div class="hero-text">
+            <h3 class="fade-right" >60% Discount</h3>
+            <h1 class="fade-right" >Winter <br> Collection</h1>
+            <p class="fade-right" >Best cloth collection by 2026!</p>
+            <a href="{{ url_for('home') }}"><button class="fade-right">Shop Now</button></a>
+        </div>
+    </div>
+</section>
+
+
+<!-- SHOP BY CATEGORY -->
+<section class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+        <!-- 1st Category: Women's -->
+        <div class="category-card category-item reveal">
+            <div class="category-image">
+                <img src="{{ url_for('static', filename='webimages/images05.jpg') }}" alt="Women's New Collection">
+                <div class="category-overlay">
+                    <h3>Women's</h3>
+                     <a href="{{ url_for('latest') }}"><button>Best New Deals</button></a>
+                    <h4>New Collection</h4>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd Category: Winter -->
+        <div class="category-card category-item reveal">
+            <div class="category-image">
+                <img src="{{ url_for('static', filename='webimages/images06.jpg') }}" alt="Winter Cloth New Collection">
+                <div class="category-overlay">
+                    <h3>Discount!</h3>
+                    <h4>Winter Cloth <br> New Collection</h4>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- 3rd Category: Men's -->
+        <div class="category-card category-item reveal">
+            <div class="category-image">
+                <img src="{{ url_for('static', filename='webimages/images07.jpg') }}" alt="Men's New Collection">
+                <div class="category-overlay">
+                    <h3>Men's</h3>
+                      <a href="{{ url_for('latest') }}"><button>Best New Deals</button></a>
+                    <h4>New Collection</h4>
+                </div>  
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- LATEST PRODUCTS -->
+<section class="products">
+    <h2>Latest Products</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='webimages/images08.png') }}" alt="Checker Shorts">
+            <h3>Checker Shorts</h3>
+            <p>$29.99</p>
+            <a href="{{ url_for('add_to_cart', id=1) }}">
+                <button>Add to Cart</button>
+            </a>
+        </div>
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='webimages/images09.png') }}" alt="Too Cool Sweatshirt">
+            <h3>Too Cool Sweatshirt</h3>
+            <p>$49.99</p>
+            <a href="{{ url_for('add_to_cart', id=2) }}">
+                <button>Add to Cart</button>
+            </a>
+        </div>
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='webimages/images10.png') }}" alt="Yellow Sweatshirt">
+            <h3>Yellow Sweatshirt</h3>
+            <p>$19.99</p>
+            <a href="{{ url_for('add_to_cart', id=3) }}">
+                <button>Add to Cart</button>
+            </a>
+        </div>
+         <div class="product-card">
+            <img src="{{ url_for('static', filename='webimages/images11.png') }}" alt="Grey Sweatshirt">
+            <h3>Grey Sweatshirt</h3>
+            <p>$19.99</p>
+            <a href="{{ url_for('add_to_cart', id=4) }}">
+                <button>Add to Cart</button>
+            </a>
+        </div>
+         <div class="product-card">
+            <img src="{{ url_for('static', filename='webimages/images12.png') }}" alt="Joggers">
+            <h3>Joggers</h3>
+            <p>$19.99</p>
+            <a href="{{ url_for('add_to_cart', id=5) }}">
+                <button>Add to Cart</button>
+            </a>
+        </div>
+         <div class="product-card">
+            <img src="{{ url_for('static', filename='webimages/images13.png') }}" alt="Vintage Coat">
+            <h3>Vintage Coat</h3>
+            <p>$19.99</p>
+            <a href="{{ url_for('add_to_cart', id=6) }}">
+                <button>Add to Cart</button>
+            </a>
+        </div>
+        
+    </div>
+</section>
+
+<!-- CTA SECTION 
+<section class="cta">
+    <h2>Don't Miss Our Latest Deals!</h2>
+    <a href="{{ url_for('home') }}"><button>Browse Collection</button></a>
+</section> -->
+
+<!-- BEST SECTION -->
+<section class="best">
+    <div class="best-container">
+        <!-- Best Image -->
+        <div class="best-image">
+            <img src="{{ url_for('static', filename='webimages/images14.png') }}" alt="Best Banner">
+        </div>
+
+        <!-- Best Text -->
+        <div class="best-text">
+            <h3> Find The Best Product <br> from Our Shop</h3>
+            <p>Designs created as statement pieces!</p>
+            <a href="{{ url_for('home') }}"><button>Shop Now</button></a>
+        </div>
+
+        <!-- BEST IMAGE 2 -->
+         <div class="best-image2">
+            <img src="{{ url_for('static', filename='webimages/images15.png') }}" alt="Best Banner">
+        </div>
+
+        
+    </div>
+</section>
+
+{% endblock %}

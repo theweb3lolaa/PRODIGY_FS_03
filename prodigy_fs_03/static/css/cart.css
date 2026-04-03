@@ -1,0 +1,140 @@
+/* ===== Reset basics ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+/* ===== Container ===== */
+.cart-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* ===== Cart header ===== */
+.cart-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* ===== Cart items ===== */
+.cart-item {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    align-items: center;
+    background-color: #fafafa;
+}
+
+.cart-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* ===== Item info ===== */
+.cart-item div h4 {
+    font-size: 1.1rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.cart-item div p {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* ===== Quantity select ===== */
+.cart-item select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* ===== Remove button ===== */
+a[href*="remove"] {
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* ===== Totals ===== */
+hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+.cart-totals {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    padding-right: 40px;
+    padding-bottom: 30px;
+}
+
+.cart-totals p {
+    margin: 8px 0;
+}
+
+.cart-totals .total {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+/* ===== Checkout button ===== */
+.checkout-btn,
+button.checkout {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover,
+button.checkout:hover {
+    background-color: #e05a4f;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-totals {
+        text-align: center;
+    }
+
+    .checkout-btn,
+    button.checkout {
+        width: 100%;
+        text-align: center;
+    }
+}

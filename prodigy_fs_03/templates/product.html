@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Product Details - Estore{% endblock %}
+
+{% block content %}
+
+<section class="product-detail">
+    <div class="product-container">
+
+        <!-- Product Image -->
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='webimages/images08.png') }}" alt="Product 8">
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+            <h2>Product 1</h2>
+            <p class="price">$29.99</p>
+            <p class="description">
+                This is a high-quality product perfect for everyday use. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Donec vel sapien nec quam feugiat fermentum.
+            </p>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1">
+
+            <a href="{{ url_for('cart') }}"><button class="add-to-cart">Add to Cart</button></a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

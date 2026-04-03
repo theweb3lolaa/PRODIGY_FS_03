@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Sign In</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <label>Username</label>
+        {{ form.username(class="form-input") }}
+
+        <label>Password</label>
+        <div class="password-field">
+            {{ form.password(class="form-input") }}
+            <button type="button" class="toggle-password" data-target="password">Show</button>
+        </div>
+
+        {{ form.submit(class="submit-btn") }}
+    </form>
+
+    <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+</div>
+
+{% endblock %}

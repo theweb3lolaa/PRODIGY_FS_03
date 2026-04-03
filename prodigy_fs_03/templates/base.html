@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Estore{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="left"> USA | +777 2345 7886</div>
+    <div class="right">
+        <a href="{{ url_for('home') }}">My Account</a>
+        <a href="{{ url_for('home') }}">Wish List</a>
+        <a href="{{ url_for('home') }}">Cart</a>
+        <a href="{{ url_for('home') }}">Checkout</a>
+    </div>
+</div>
+
+<!-- NAVBAR -->   
+<div class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='webimages/images01.png') }}" alt="Estore Logo"> 
+    </div>
+                
+    <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('home') }}">Category</a></li>
+        <li class="hot"><a href="{{ url_for('home') }}">Latest</a></li>
+        <li><a href="{{ url_for('home') }}">Blog</a></li>
+        <li><a href="{{ url_for('home') }}">Pages</a></li>
+        <li><a href="{{ url_for('home') }}">Contact</a></li>
+    </ul>
+       
+    <div class="nav-right">
+        <input type="text" placeholder="Search products">
+        <div class="icon">♡</div>
+        <div class="icon">
+        <a href="{{ url_for('cart') }}" style="color: inherit; text-decoration: none;"> 🛒</a> </div>
+        {% set cart_count = session.get('cart')|length if session.get('cart') else 0 %}
+            <span class="cart-count">{{ cart_count }}</span>
+
+        {% if current_user.is_authenticated %}
+            <span>Welcome, {{ current_user.username }}!</span>
+            <a href="{{ url_for('logout') }}"><button class="signin">Logout</button></a>
+        {% else %}
+            <a href="{{ url_for('login') }}"><button class="signin">Sign In</button></a>
+    {% endif %}
+    </div>
+</div>
+     
+
+<!-- PAGE CONTENT -->
+<div class="page-content" >
+    {% block content %}
+    <!-- Child templates will inject content here -->
+    {% endblock %}
+</div>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
